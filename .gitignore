@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+*.so
+*.o
+
+# Data, checkpoints, and generated meshes
+data/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.xyz
+*.ply
+*.obj
+*.off
+*.npz
+
+# Notebooks & OS
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+wandb/
