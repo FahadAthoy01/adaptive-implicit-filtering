@@ -7,7 +7,7 @@ dist/
 *.o
 
 # Data, checkpoints, and generated meshes
-data/
+/data/
 checkpoints/
 *.pth
 *.pt
