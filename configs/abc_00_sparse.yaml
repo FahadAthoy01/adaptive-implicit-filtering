@@ -1,0 +1,35 @@
+experiment:
+  name: abc_00_sparse_baseline
+  seed: 42
+  device: cuda
+
+data:
+  dataset: points2surf_abc
+  subset: abc_00_sparse
+  data_dir: data/abc_00_sparse
+  file_ext: .xyz
+  normalize: true
+  scale_factor: 0.9
+
+model:
+  hidden_dim: 256
+  num_layers: 8
+  skip_in: [4]
+  geometric_init: true
+
+filtering:
+  mode: adaptive   # baseline | adaptive
+  k_neighbors: 32
+  spatial_sigma: 0.05
+  angular_sigma: 0.35
+
+train:
+  epochs: 2000
+  batch_size: 4096
+  lr: 1.0e-3
+  grad_weight: 0.1
+
+eval:
+  marching_cubes_res: 256
+  fscore_threshold: 0.01
+  metrics: [CD_L1, CD_L2, NC, F-Score, ECD_L1]
